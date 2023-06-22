@@ -1,0 +1,25 @@
+{
+    "name": "ardiarcadia/ardiminiapi",
+    "description": "MVC API Simple",
+    "authors": [
+        {
+            "name": "ardiarcadia",
+            "email": "ardi.arcadia@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require": {
+        "leafs/leaf": "^3.4",
+        "leafs/form": "^1.2",
+        "leafs/password": "^1.0",
+        "leafs/date": "^2.0",
+        "leafs/cors": "^1.1"
+    }
+}
