@@ -2,31 +2,20 @@
 
 namespace App\Models;
 
-use Leaf\App;
-use Leaf\Db;
-
-class MysqlModel{
-
-    protected $app;
-    protected $db;
-
-    public function __construct(){
-        $this->app = new App;
-        $this->db = new Db;
-	}
+class MysqlModel extends Model{
 
     function connectDb()
     {
         $this->db->connect([
-            'dbtype' => 'mysql',
-            'host' => '127.0.0.1',
-            'username' => 'ardi',
-            'password' => 'ITimipsuperadmin88',
-            'dbname' => 'db_kitas',
+            'dbtype' => $this->app->config('db_dbtype'),
+            'host' => $this->app->config('db_host'),
+            'username' => $this->app->config('db_username'),
+            'password' => $this->app->config('db_password'),
+            'dbname' => $this->app->config('db_dbname')
         ]);
     }
 
-    function index()
+    function get_all_users()
     {
         $this->connectDb();
         $users = $this->db->query('SELECT * FROM tbl_users')->all();

@@ -10,7 +10,8 @@ class AuthController extends Controller{
     {
         $this->app->response()->json([
             "message" => 'Hallo controllers Auth',
-            "data" => $this->app->request()->get("username")
+            "data" => $this->app->request()->get("username"),
+            "config" => $this->app->config('conf01')
         ], 200);
     }
 
@@ -21,7 +22,7 @@ class AuthController extends Controller{
 
         $this->app->response()->json([
             "message" => 'success',
-            "data" => $myDb->index()
+            "data" => $myDb->get_all_users()
         ], 200);
     }
 

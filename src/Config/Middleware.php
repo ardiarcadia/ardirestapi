@@ -9,8 +9,12 @@ return function ($app) {
                 "status" => 'failed',
                 "message" => 'Unauthorized'
             ], 401);
-            // header('location: /ambil');
             exit();
+            // header('location: /ambil');
+            // get specific cookie
+            // $app->request()->cookies("name");
+            // get all cookies
+            // $app->request()->cookies();
         }
     });
 };
