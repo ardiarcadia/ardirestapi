@@ -16,5 +16,6 @@ return function ($app) {
     });
 
     $app->post("/home", "AuthController@index");
+    $app->get("/getdb", "AuthController@get_database");
 
 };
