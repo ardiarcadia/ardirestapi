@@ -4,6 +4,11 @@ namespace App\Models;
 
 class MysqlModel extends Model{
 
+    function __construct() {
+        parent::__construct();
+        $this->connectDb();
+    }
+
     function connectDb()
     {
         $this->db->connect([
@@ -17,7 +22,6 @@ class MysqlModel extends Model{
 
     function get_all_users()
     {
-        $this->connectDb();
         $users = $this->db->query('SELECT * FROM tbl_users')->all();
         return $users;
     }
